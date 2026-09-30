@@ -71,6 +71,7 @@ Preguntas clave:
 
 5. ¿Existen países con niveles similares de PIB per cápita pero niveles de felicidad muy diferentes?
 
+
 Proceso de análisis:
 
 1. Adquisición de datos
