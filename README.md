@@ -101,7 +101,7 @@ Las tablas se relacionan mediante el código ISO3 de cada país y, en el caso de
 
 4. Modelo de la base de datos
 
-[AÑADIR AQUÍ SCREENSHOT DEL ERD]
+![alt text](image.png)
 
 5. Análisis SQL
 
@@ -182,7 +182,7 @@ Además, otros indicadores económicos analizados presentan relaciones más déb
 
 En conjunto, los resultados sugieren que la felicidad es un fenómeno multidimensional y que debe analizarse teniendo en cuenta tanto factores económicos como sociales.
 
-### Recomendaciones de negocio:
+### Recomendaciones de negocio
 
 Los resultados sugieren que el PIB per cápita no debería utilizarse de forma aislada como indicador del bienestar de una población.
 
@@ -190,14 +190,15 @@ Para evaluar el desarrollo de un país sería recomendable complementar los indi
 
 Además, las diferencias encontradas entre países con niveles similares de riqueza muestran la importancia de estudiar qué otros factores pueden estar asociados con mayores niveles de felicidad.
 
-### Limitaciones:
+### Limitaciones
+
 - Algunos indicadores presentan valores ausentes para determinados países y años.
 - El periodo analizado está limitado a **2015–2019**.
 - La disponibilidad de información varía entre países.
 - Las correlaciones observadas representan asociaciones entre variables y no permiten establecer relaciones de causalidad.
 - La comparación entre países puede estar influida por factores sociales, culturales o institucionales que no están incluidos en este análisis.
 
-### Próximos pasos:
+### Próximos pasos
 
 Con más tiempo y datos disponibles, el proyecto podría ampliarse mediante:
 
@@ -207,4 +208,4 @@ Con más tiempo y datos disponibles, el proyecto podría ampliarse mediante:
 - Estudio más detallado de los países que presentan niveles similares de PIB pero grandes diferencias de felicidad.
 - Creación de visualizaciones interactivas o un dashboard que permita explorar los resultados por país, región y año.
 
-### Cómo replicar el proyecto → Enlace al notebook, queries SQL o dashboard.
+### Cómo replicar el proyecto 
