@@ -1,4 +1,4 @@
-### Felicidad y economía mundial: análisis de factores económicos y sociales
+### Más allá del PIB: ¿Una mayor prosperidad económica significa una mayor felicidad?
 
 ### Objetivo del proyecto:
 
@@ -208,4 +208,14 @@ Con más tiempo y datos disponibles, el proyecto podría ampliarse mediante:
 - Estudio más detallado de los países que presentan niveles similares de PIB pero grandes diferencias de felicidad.
 - Creación de visualizaciones interactivas o un dashboard que permita explorar los resultados por país, región y año.
 
-### Cómo replicar el proyecto 
+### Cómo replicar el proyecto
+
+1. Clonar este repositorio.
+2. Instalar las librerías necesarias de Python.
+3. Ejecutar los notebooks de adquisición, limpieza e integración de datos.
+4. Crear la base de datos en MySQL utilizando el archivo `.sql` incluido en el repositorio.
+5. Cargar las tablas `countries`, `happiness_rating` y `economic_indicators`.
+6. Ejecutar las consultas SQL para reproducir el análisis.
+7. Ejecutar el notebook final para generar las visualizaciones y consultar los principales resultados.
+
+Los datos utilizados proceden del **World Happiness Report (2015–2019)** y de la **API del Banco Mundial**.
