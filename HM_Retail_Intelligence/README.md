@@ -263,8 +263,20 @@ Para llevar las recomendaciones a la práctica he creado una app interactiva en 
 | **① Campañas segmentadas** | ¿Qué supondría aumentar la intensidad de compra de un segmento? | Segmento (edad o afiliación), % de compradores alcanzados y artículos adicionales por comprador |
 | **② Surtido y temporada** | ¿Qué categorías ganan o pierden peso cada mes? | Grupo de edad, mes y categorías del gráfico |
 | **③ Estrategia por canal** | ¿Cómo cambia el mix total si cambia el peso de cada canal? | Cuota del canal 2 |
+| **④ Previsión de demanda** | ¿Cuánta demanda cabe esperar en los próximos 12 meses y cómo se reparte por categoría? | Crecimiento frente al año anterior, meses de campaña e impacto esperado, mes a planificar |
 
 > Los resultados son **escenarios hipotéticos calculados sobre patrones observados**, no predicciones. La app lo indica en cada pestaña.
+
+**Previsión de demanda.** Se usa la serie mensual completa del EDA (sep 2018 – sep 2020). El modelo es *estacional ajustado*: cada mes se calcula como el mismo mes del año anterior multiplicado por el crecimiento reciente (últimos 3 meses frente a los mismos meses del año previo). Se validó con un **backtest** sobre oct 2019 – ago 2020, prediciendo cada mes solo con la información anterior:
+
+| Modelo | MAPE |
+|---|---:|
+| **Estacional ajustado** | **10,5 %** |
+| Último mes (naive) | 10,9 % |
+| Media móvil 3 meses | 13,9 % |
+| Mismo mes del año anterior | 14,0 % |
+
+Se eligió el modelo más sencillo con menor error. La previsión se muestra con una banda de ±10,5 % y es **orientativa**: solo hay dos años de datos y 2020 está afectado por la pandemia.
 
 **Ejecutar en local**
 

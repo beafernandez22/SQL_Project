@@ -49,7 +49,7 @@ Para cerrar, convierto los hallazgos en tres decisiones. Primera: planificar el 
 
 ## 9. Demo del simulador y cierre · 0:30
 
-Para que estas decisiones no se queden en la diapositiva, construí un simulador en Streamlit con los mismos datos agregados de SQL. Por ejemplo: si una campaña llega al 20 % de los compradores de 16 a 24 años y cada uno compra dos artículos más, serían unos 111.000 artículos adicionales, un 0,75 % del total. También permite ver qué categorías ganan peso cada mes y cómo cambiaría el mix si cambia el peso de cada canal. Son escenarios, no predicciones. Muchas gracias; quedo abierta a vuestras preguntas.
+Para que estas decisiones no se queden en la diapositiva, construí un simulador en Streamlit con los mismos datos agregados de SQL. Por ejemplo: si una campaña llega al 20 % de los compradores de 16 a 24 años y cada uno compra dos artículos más, serían unos 111.000 artículos adicionales, un 0,75 % del total. También incluye una previsión de demanda a 12 meses, validada con un backtest con un error medio del 10,5 %, que se reparte por categoría para planificar el surtido. Es orientativa: solo hay dos años de datos. Muchas gracias; quedo abierta a vuestras preguntas.
 
 ---
 
