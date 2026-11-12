@@ -1,6 +1,6 @@
-# H&M Retail Intelligence
+# Muchos datos, poca visión
 
-### Comportamiento de clientes, rendimiento de ventas y preferencias de producto
+### H&M Retail Intelligence · ¿Cómo convertir millones de transacciones en decisiones sobre clientes, productos y canales?
 
 ![Python](https://img.shields.io/badge/Python-pandas-3776AB?logo=python&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-Workbench-4479A1?logo=mysql&logoColor=white)
