@@ -1,0 +1,62 @@
+afiliacion,categoria,articulos_vendidos
+"ACTIVE","Garment Upper body",5661301
+"ACTIVE","Garment Lower body",3196045
+"ACTIVE","Garment Full body",1737674
+"ACTIVE",Underwear,1279802
+"ACTIVE",Swimwear,1121782
+"ACTIVE",Accessories,748675
+"ACTIVE","Socks & Tights",329680
+"ACTIVE",Shoes,313778
+"ACTIVE",Nightwear,174963
+"ACTIVE",Unknown,75877
+"ACTIVE",Bags,5614
+"ACTIVE",Items,4182
+"ACTIVE",Furniture,518
+"ACTIVE",Cosmetic,279
+"ACTIVE","Garment and Shoe care",276
+"ACTIVE",Stationery,220
+"ACTIVE",Underwear/nightwear,144
+"ACTIVE","Interior textile",21
+"ACTIVE",Fun,5
+"LEFT CLUB","Garment Upper body",895
+"LEFT CLUB","Garment Lower body",523
+"LEFT CLUB",Underwear,286
+"LEFT CLUB","Garment Full body",220
+"LEFT CLUB",Swimwear,185
+"LEFT CLUB",Accessories,101
+"LEFT CLUB",Shoes,63
+"LEFT CLUB","Socks & Tights",51
+"LEFT CLUB",Nightwear,32
+"LEFT CLUB",Bags,5
+"LEFT CLUB",Unknown,5
+"LEFT CLUB",Furniture,1
+"PRE-CREATE","Garment Upper body",81351
+"PRE-CREATE","Garment Lower body",50385
+"PRE-CREATE",Underwear,23093
+"PRE-CREATE","Garment Full body",22407
+"PRE-CREATE",Swimwear,20789
+"PRE-CREATE",Accessories,7031
+"PRE-CREATE",Shoes,4587
+"PRE-CREATE","Socks & Tights",4133
+"PRE-CREATE",Nightwear,3413
+"PRE-CREATE",Unknown,1388
+"PRE-CREATE",Bags,82
+"PRE-CREATE",Furniture,10
+"PRE-CREATE",Stationery,6
+"PRE-CREATE",Underwear/nightwear,4
+"PRE-CREATE","Garment and Shoe care",3
+"PRE-CREATE",Items,3
+"PRE-CREATE",Cosmetic,2
+"UNKNOWN","Garment Upper body",10688
+"UNKNOWN","Garment Lower body",6000
+"UNKNOWN","Garment Full body",3218
+"UNKNOWN",Underwear,2152
+"UNKNOWN",Swimwear,1695
+"UNKNOWN",Accessories,1119
+"UNKNOWN",Shoes,694
+"UNKNOWN","Socks & Tights",432
+"UNKNOWN",Nightwear,387
+"UNKNOWN",Unknown,129
+"UNKNOWN",Bags,13
+"UNKNOWN",Stationery,3
+"UNKNOWN",Items,3

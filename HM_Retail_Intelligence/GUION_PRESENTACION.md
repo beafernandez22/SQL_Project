@@ -1,17 +1,19 @@
 # Guion de la presentación · H&M Retail Intelligence
 
-**Duración total: 8:00 min** · [Diapositivas](https://claude.ai/artifact/XoVnxjusRMbLNh5mR4H4Jq)
+**Duración total: 8:00 min** · [Diapositivas](https://claude.ai/artifact/XoVnxjusRMbLNh5mR4H4Jq) · Simulador: `app/app.py`
 
 | # | Bloque | Tiempo |
 |:-:|---|:-:|
 | 1 | Portada y contexto | 0:30 |
 | 2 | Problema de negocio y destinatarios | 0:50 |
-| 3 | Datos y metodología | 0:55 |
+| 3 | Datos y metodología | 0:40 |
 | 4 | Visión general del negocio | 1:05 |
 | 5 | Clientes y fidelización | 1:15 |
 | 6 | Productos y canales | 1:15 |
-| 7 | Evolución del mix de productos | 1:30 |
-| 8 | Decisiones estratégicas y cierre | 0:40 |
+| 7 | Evolución del mix de productos | 1:15 |
+| 8 | Decisiones estratégicas | 0:40 |
+| 9 | Demo del simulador y cierre | 0:30 |
+| | **Total** | **8:00** |
 
 ## 1. Portada y contexto · 0:30
 
@@ -21,9 +23,9 @@ Buenos días. Soy Beatriz y este es H&M Retail Intelligence. El objetivo del pro
 
 Me sitúo como Data Analyst del equipo de estrategia comercial de H&M. La pregunta que da sentido a todo es: ¿cómo identificar oportunidades comerciales a partir de los patrones de compra de clientes, productos y canales? El problema no es que H&M venda mal; eso no lo sabemos. El problema es que millones de registros, por sí solos, no ofrecen una visión integrada para orientar decisiones. Por eso esto es un diagnóstico comercial con datos históricos: no predigo ventas ni audito la rentabilidad. El destinatario principal es la dirección comercial, con aplicaciones directas para marketing y CRM, y para planificación de producto.
 
-## 3. Datos y metodología · 0:55
+## 3. Datos y metodología · 0:40
 
-Trabajé con el dataset público de H&M: más de 31 millones de transacciones, 1,4 millones de clientes y 105.000 artículos. Para que fuera manejable en MySQL me quedé con un ciclo anual completo, de septiembre de 2019 a septiembre de 2020: casi 15 millones de filas, sin muestrear clientes. Con Python exploré y limpié los datos, leyendo el fichero por bloques; en MySQL construí un modelo relacional con tres tablas y respondí las preguntas de negocio; y en Tableau lo convertí en cinco dashboards. Una aclaración esencial para todo lo que viene: cada fila es un artículo vendido, no un pedido. Y los precios vienen normalizados, así que no hablo de euros.
+Trabajé con el dataset público de H&M: más de 31 millones de transacciones, 1,4 millones de clientes y 105.000 artículos. Me quedé con un año completo, de septiembre de 2019 a septiembre de 2020: casi 15 millones de filas. Python para limpiar y preparar, MySQL para analizar con un modelo relacional, y Tableau para comunicar en cinco dashboards. Una aclaración esencial: cada fila es un artículo vendido, no un pedido, y los precios están normalizados, así que no hablo de euros.
 
 ## 4. Visión general del negocio · 1:05
 
@@ -37,17 +39,27 @@ Segunda pregunta: ¿quién está detrás de esa actividad? Por edad, el grupo de
 
 Tercera pregunta: ¿qué compran y por dónde? La demanda está muy concentrada: Garment Upper body supone el 38,62 % de los artículos vendidos y, junto con Lower body, el 60,45 %. Por canales, el canal 2 concentra el 71,85 % del volumen. Pero aquí hay una distinción importante: volumen y participación no son lo mismo. Aunque el canal 2 vende más en total, Upper body pesa más dentro del canal 1, un 42,93 %, que dentro del canal 2, un 36,94 %. Es decir, la composición de lo que se vende cambia según el canal. También cambia por edad: el grupo de 25 a 34 años es el que más usa el canal 2. Y una precaución: no identifico el canal 1 como tienda física ni el 2 como online, porque el dataset no lo documenta. Ahora bien, un análisis agregado puede ocultar cambios en el tiempo, y eso es lo que miramos a continuación.
 
-## 7. Evolución del mix de productos · 1:30
+## 7. Evolución del mix de productos · 1:15
 
-Cuarta pregunta: ¿la composición de lo que se vende se mantiene estable? Este gráfico no repite el de ventas mensuales. Aquel respondía cuántos artículos se venden cada mes; este responde qué proporción del total mensual representa cada categoría. Y aquí aparece un cambio claro. Garment Upper body, la categoría principal, pasa de representar cerca del 50 % de los artículos en septiembre de 2019 a un 30 % en mayo y junio de 2020, y luego recupera peso. Ojo: eso es peso relativo, no necesariamente una caída de su volumen absoluto. En paralelo, Swimwear pasa de apenas un 1 % a un 15,6 % en mayo, justo en la primavera. Lower body, en cambio, se mantiene bastante estable, entre el 19 y el 24 %. ¿Para qué le sirve esto a un equipo comercial? Para revisar el calendario de campañas y la planificación del surtido según el periodo. Pero con prudencia: con un único año de datos no puedo afirmar que sea un patrón estacional que se repita. Con estas cuatro perspectivas ya podemos pasar a las decisiones.
+Cuarta pregunta: ¿la composición de lo que se vende se mantiene estable? Este gráfico no repite el de ventas mensuales: aquel decía cuántos artículos se venden; este, qué proporción del total mensual representa cada categoría. Garment Upper body pasa de cerca del 50 % en septiembre de 2019 a un 30 % en mayo y junio de 2020, y luego recupera. Ojo: es peso relativo, no necesariamente una caída de volumen. En paralelo, Swimwear pasa de un 1 % a un 15,6 % en mayo, y Lower body se mantiene estable, entre el 19 y el 24 %. Para un equipo comercial, esto sirve para revisar el calendario de campañas y el surtido según el periodo. Pero con prudencia: con un solo año no puedo afirmar que sea un patrón estacional. Con estas cuatro perspectivas, pasamos a las decisiones.
 
-## 8. Decisiones estratégicas y cierre · 0:40
+## 8. Decisiones estratégicas · 0:40
 
-Para cerrar, convierto los hallazgos en tres decisiones. Primera: planificar el surtido según la demanda, porque dos categorías concentran el 60 % y el mix cambia a lo largo del año. Segunda: probar campañas segmentadas por edad y afiliación, empezando por los segmentos con menor intensidad de compra. Tercera: diferenciar la estrategia por canal, porque cada canal vende un mix distinto. Cada una lleva un KPI para medir su efecto. Son recomendaciones basadas en patrones observados, no promesas de mejora: lo siguiente sería validarlas con pruebas controladas. Muchas gracias.
+Para cerrar, convierto los hallazgos en tres decisiones. Primera: planificar el surtido según la demanda, porque dos categorías concentran el 60 % y el mix cambia a lo largo del año. Segunda: probar campañas segmentadas por edad y afiliación, empezando por los segmentos con menor intensidad de compra. Tercera: diferenciar la estrategia por canal, porque cada canal vende un mix distinto. Cada una lleva un KPI para medir su efecto. Son recomendaciones basadas en patrones observados, no promesas de mejora: lo siguiente sería validarlas con pruebas controladas. Y para explorarlas, he construido un simulador.
+
+## 9. Demo del simulador y cierre · 0:30
+
+Para que estas decisiones no se queden en la diapositiva, construí un simulador en Streamlit con los mismos datos agregados de SQL. Por ejemplo: si una campaña llega al 20 % de los compradores de 16 a 24 años y cada uno compra dos artículos más, serían unos 111.000 artículos adicionales, un 0,75 % del total. También permite ver qué categorías ganan peso cada mes y cómo cambiaría el mix si cambia el peso de cada canal. Son escenarios, no predicciones. Muchas gracias; quedo abierta a vuestras preguntas.
 
 ---
 
-*≈971 palabras: ritmo de unas 130 palabras por minuto, con margen para las pausas.*
+*≈994 palabras: unas 125 palabras por minuto, con margen para pausas y para la demo.*
+
+## Consejos para la demo
+
+- Ten la app **abierta antes de empezar**, en la pestaña *① Campañas segmentadas*.
+- Haz **un solo movimiento**: subir el alcance del 20 % al 50 % y comentar cómo cambian las tarjetas.
+- Lleva una **captura o vídeo de respaldo** (`app/captura_simulador.png`) por si falla la conexión.
 
 ## Frases clave para defender el proyecto
 
@@ -57,4 +69,5 @@ Para cerrar, convierto los hallazgos en tres decisiones. Primera: planificar el 
 - **Asociación ≠ causalidad:** ser ACTIVE no demuestra que el club haga comprar más.
 - **Canales sin etiqueta:** no se afirma que el canal 1 sea tienda física ni el 2 online.
 - **Un año ≠ estacionalidad:** los cambios del mix son compatibles con un patrón estacional, pero no lo confirman.
+- **Escenario ≠ predicción:** el simulador calcula qué pasaría *si* ocurre un cambio; no estima la probabilidad de lograrlo.
 - **1 fila = 1 artículo:** no hay id de pedido y los precios están normalizados.

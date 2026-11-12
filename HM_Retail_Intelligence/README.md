@@ -5,7 +5,8 @@
 ![Python](https://img.shields.io/badge/Python-pandas-3776AB?logo=python&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-Workbench-4479A1?logo=mysql&logoColor=white)
 ![Tableau](https://img.shields.io/badge/Tableau-5%20dashboards-E97627?logo=tableau&logoColor=white)
-![Estado](https://img.shields.io/badge/estado-finalizado-2E5C7A)
+![Streamlit](https://img.shields.io/badge/Streamlit-simulador-FF4B4B?logo=streamlit&logoColor=white)
+![Estado](https://img.shields.io/badge/estado-finalizado-111111)
 
 > **Proyecto final · Data Analytics Bootcamp (Ironhack) · Caso práctico 2: análisis de datos de principio a fin**
 > Diagnóstico comercial de **14,9 millones de artículos vendidos** por H&M entre septiembre de 2019 y septiembre de 2020, con Python, MySQL y Tableau.
@@ -13,6 +14,7 @@
 🎤 **Presentación:** [Diapositivas del proyecto](https://claude.ai/artifact/XoVnxjusRMbLNh5mR4H4Jq)
 🗣️ **Guion (8 min):** [GUION_PRESENTACION.md](GUION_PRESENTACION.md)
 📊 **Dashboard:** [`tableau/HM_Retail_Intelligence.twbx`](tableau/HM_Retail_Intelligence.twbx)
+🧪 **Simulador (Streamlit):** [`app/app.py`](app/app.py) · *[URL de Streamlit Cloud]*
 
 ---
 
@@ -28,9 +30,10 @@
 8. [Dashboard de Tableau](#8-dashboard-de-tableau)
 9. [Principales hallazgos](#9-principales-hallazgos)
 10. [Recomendaciones](#10-recomendaciones)
-11. [Limitaciones y próximos pasos](#11-limitaciones-y-próximos-pasos)
-12. [Estructura del repositorio](#12-estructura-del-repositorio)
-13. [Cómo reproducir el proyecto](#13-cómo-reproducir-el-proyecto)
+11. [Simulador de escenarios (Streamlit)](#11-simulador-de-escenarios-streamlit)
+12. [Limitaciones y próximos pasos](#12-limitaciones-y-próximos-pasos)
+13. [Estructura del repositorio](#13-estructura-del-repositorio)
+14. [Cómo reproducir el proyecto](#14-cómo-reproducir-el-proyecto)
 
 ---
 
@@ -248,7 +251,32 @@ Los dashboards cuentan **una sola historia**. Cada uno responde una pregunta y l
 
 > Son recomendaciones **basadas en patrones observados**. No son resultados de experimentos ni garantizan una mejora. El siguiente paso es validarlas con pruebas controladas (A/B).
 
-## 11. Limitaciones y próximos pasos
+## 11. Simulador de escenarios (Streamlit)
+
+Para llevar las recomendaciones a la práctica he creado una app interactiva en Streamlit ([`app/app.py`](app/app.py)). Funciona con los mismos **resultados agregados de las consultas SQL** que alimentan Tableau, así que no necesita MySQL ni los datos en bruto.
+
+![Simulador de escenarios](app/captura_simulador.png)
+
+| Pestaña | Pregunta | Qué se puede mover |
+|---|---|---|
+| **Visión general** | ¿Coinciden los picos de artículos y de compradores? | — |
+| **① Campañas segmentadas** | ¿Qué supondría aumentar la intensidad de compra de un segmento? | Segmento (edad o afiliación), % de compradores alcanzados y artículos adicionales por comprador |
+| **② Surtido y temporada** | ¿Qué categorías ganan o pierden peso cada mes? | Grupo de edad, mes y categorías del gráfico |
+| **③ Estrategia por canal** | ¿Cómo cambia el mix total si cambia el peso de cada canal? | Cuota del canal 2 |
+
+> Los resultados son **escenarios hipotéticos calculados sobre patrones observados**, no predicciones. La app lo indica en cada pestaña.
+
+**Ejecutar en local**
+
+```bash
+cd app
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+**Publicar gratis** en [Streamlit Community Cloud](https://share.streamlit.io): *New app* → elegir este repositorio → *Main file path*: `HM_Retail_Intelligence/app/app.py` → *Deploy*.
+
+## 12. Limitaciones y próximos pasos
 
 **Limitaciones**
 - No hay identificador de pedido, así que se miden artículos y no tickets ni visitas.
@@ -263,8 +291,9 @@ Los dashboards cuentan **una sola historia**. Cada uno responde una pregunta y l
 - Segmentación **RFM** y análisis de **cohortes** de retención.
 - Validar las recomendaciones con pruebas A/B.
 - Automatizar la carga de datos y publicar el dashboard en Tableau Public.
+- Ampliar el simulador con datos de varios años para estimar rangos de variación.
 
-## 12. Estructura del repositorio
+## 13. Estructura del repositorio
 
 ```
 HM_Retail_Intelligence/
@@ -278,13 +307,19 @@ HM_Retail_Intelligence/
 │   ├── 06_analisis_productos.sql   # Product Intelligence
 │   ├── 07_analisis_canales.sql     # Sales Channel Intelligence
 │   └── 08_analisis_segmentacion.sql# Afiliación y evolución del mix
+├── app/
+│   ├── app.py                      # Simulador de escenarios (Streamlit)
+│   ├── requirements.txt
+│   ├── captura_simulador.png
+│   ├── .streamlit/config.toml      # Tema rojo, negro y blanco
+│   └── data/                       # Resultados agregados de las consultas SQL (CSV)
 ├── modelo/
 │   └── HM_Retail_Intelligence_Model.mwb  # Modelo EER (MySQL Workbench)
 └── tableau/
     └── HM_Retail_Intelligence.twbx # 17 hojas · 5 dashboards
 ```
 
-## 13. Cómo reproducir el proyecto
+## 14. Cómo reproducir el proyecto
 
 1. **Descargar los datos** de [Kaggle](https://www.kaggle.com/competitions/h-and-m-personalized-fashion-recommendations/data) (`customers.csv`, `articles.csv`, `transactions_train.csv`) en `data/raw/`.
 2. **Instalar las dependencias:** `pip install pandas matplotlib jupyter`.
@@ -294,6 +329,7 @@ HM_Retail_Intelligence/
 5. **Importar los CSV** con `LOAD DATA LOCAL INFILE` (con `LINES TERMINATED BY '\r\n'`) y crear el índice sobre `transacciones.customer_id`.
 6. **Ejecutar los scripts** `sql/04` a `sql/08` en orden.
 7. **Abrir** `tableau/HM_Retail_Intelligence.twbx` con Tableau Desktop o Tableau Public, que ya incluye los datos agregados.
+8. **Lanzar el simulador:** `cd app && streamlit run app.py`.
 
 ---
 
